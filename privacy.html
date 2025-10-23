@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Politikası - Fevkalade Bot</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Discord Embed Meta Tags -->
+    <meta property="og:title" content="Fevkalade Bot - Gizlilik Politikası">
+    <meta property="og:description" content="Fevkalade Bot'un gizlilik politikası ve veri koruma uygulamaları hakkında detaylı bilgi.">
+    <meta property="og:image" content="https://fevkalade.netlify.app/images/logo.png">
+    <meta property="og:url" content="https://fevkalade.netlify.app/privacy.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Fevkalade Bot">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fevkalade Bot - Gizlilik Politikası">
+    <meta name="twitter:description" content="Gizlilik politikası ve veri koruma uygulamaları">
+    <meta name="twitter:image" content="https://fevkalade.netlify.app/images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Fevkalade Bot" class="logo-img">
+                <span class="logo-text">Fevkalade</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i>Ana Sayfa</a></li>
+                <li><a href="index.html#features" class="nav-link"><i class="fas fa-star"></i>Özellikler</a></li>
+                <li><a href="index.html#commands" class="nav-link"><i class="fas fa-terminal"></i>Komutlar</a></li>
+                <li><a href="index.html#stats" class="nav-link"><i class="fas fa-chart-bar"></i>İstatistikler</a></li>
+                <li><a href="index.html#contact" class="nav-link"><i class="fas fa-envelope"></i>İletişim</a></li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <div class="user-profile" id="userProfile" style="display: none;">
+                    <img src="" alt="User" class="user-avatar" id="navUserAvatar">
+                    <span class="user-name" id="navUserName"></span>
+                    <div class="user-dropdown">
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i>Kontrol Paneli</a>
+                        <a href="#" id="navLogout"><i class="fas fa-sign-out-alt"></i>Çıkış Yap</a>
+                    </div>
+                </div>
+                <a href="dashboard.html" class="btn btn-dashboard" id="dashboardBtn">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Kontrol Paneli</span>
+                </a>
+                <a href="https://discord.com/api/oauth2/authorize?client_id=1408189180982591618&permissions=8&scope=bot%20applications.commands" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-discord"></i>
+                    <span>Sunucuna Ekle</span>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="legal-page">
+        <div class="container">
+            <div class="legal-content">
+                <h1><i class="fas fa-shield-alt"></i> Gizlilik Politikası</h1>
+                <p class="last-updated">Son güncelleme: 22 Ekim 2025</p>
+
+                <div class="legal-section">
+                    <h2>1. Veri Toplama</h2>
+                    <p>Fevkalade Bot, Discord sunucularında hizmet verebilmek için aşağıdaki verileri toplar:</p>
+                    <ul>
+                        <li>Kullanıcı ID'leri ve kullanıcı adları</li>
+                        <li>Sunucu ID'leri ve sunucu bilgileri</li>
+                        <li>Mesaj içerikleri (sadece komut işleme için)</li>
+                        <li>Kanal ID'leri ve kanal isimleri</li>
+                        <li>Rol bilgileri ve izinler</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h2>2. Veri Kullanımı</h2>
+                    <p>Toplanan veriler yalnızca şu amaçlarla kullanılır:</p>
+                    <ul>
+                        <li>Bot komutlarının işlenmesi</li>
+                        <li>Moderasyon özelliklerinin sağlanması</li>
+                        <li>Sunucu ayarlarının saklanması</li>
+                        <li>İstatistik ve analiz verilerinin oluşturulması</li>
+                        <li>Hizmet kalitesinin artırılması</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h2>3. Veri Güvenliği</h2>
+                    <p>Verilerinizin güvenliği bizim için önceliklidir:</p>
+                    <ul>
+                        <li>Tüm veriler şifrelenmiş sunucularda saklanır</li>
+                        <li>Veritabanı erişimi sınırlıdır ve güvenlidir</li>
+                        <li>Düzenli güvenlik güncellemeleri yapılır</li>
+                        <li>Veri ihlali durumunda derhal bildirim yapılır</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h2>4. Veri Paylaşımı</h2>
+                    <p>Verileriniz hiçbir şekilde üçüncü şahıslarla paylaşılmaz. İstisnalar:</p>
+                    <ul>
+                        <li>Yasal zorunluluklar</li>
+                        <li>Discord'un Hizmet Şartları gereği</li>
+                        <li>Güvenlik tehditleri</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h2>5. Veri Saklama</h2>
+                    <p>Veriler yalnızca gerekli olduğu süre boyunca saklanır:</p>
+                    <ul>
+                        <li>Aktif sunucu verileri: Süresiz (bot kullanıldığı sürece)</li>
+                        <li>Mesaj logları: Maksimum 30 gün</li>
+                        <li>İstatistik verileri: Maksimum 1 yıl</li>
+                        <li>Hata logları: Maksimum 7 gün</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h2>6. Haklarınız</h2>
+                    <p>KVKK kapsamında sahip olduğunuz haklar:</p>
+                    <ul>
+                        <li>Verilerinizin işlenip işlenmediğini öğrenme</li>
+                        <li>İşlenen verileriniz hakkında bilgi talep etme</li>
+                        <li>Verilerin düzeltilmesini isteme</li>
+                        <li>Verilerin silinmesini talep etme</li>
+                        <li>İşleme itiraz etme</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h2>7. İletişim</h2>
+                    <p>Gizlilik politikası ile ilgili sorularınız için:</p>
+                    <ul>
+                        <li>Discord Sunucumuz: <a href="https://discord.gg/EhtGEdaUBC" target="_blank">discord.gg/EhtGEdaUBC</a></li>
+                        <li>Bu politika değişiklik gösterebilir</li>
+                        <li>Önemli değişiklikler Discord sunucumuzdan duyurulur</li>
+                    </ul>
+                </div>
+
+                <div class="back-button">
+                    <a href="index.html" class="btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Ana Sayfaya Dön
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Logo" class="logo-img">
+                    <span>Fevkalade Bot</span>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Gizlilik Politikası</a>
+                    <a href="terms.html">Kullanım Şartları</a>
+                    <a href="https://discord.gg/EhtGEdaUBC" target="_blank">Destek</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fevkalade Bot. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

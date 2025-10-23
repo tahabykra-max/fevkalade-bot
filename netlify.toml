@@ -1,0 +1,10 @@
+[build]
+  functions = "netlify/functions"
+
+[build.environment]
+  DISCORD_CLIENT_SECRET = "-We-uaLS_R0OG13HAtyBi_ZPuAvyJx47"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

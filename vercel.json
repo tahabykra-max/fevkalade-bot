@@ -1,0 +1,17 @@
+{
+  "functions": {
+    "netlify/functions/discord-auth.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/dashboard", 
+      "destination": "/dashboard.html"
+    }
+  ]
+}

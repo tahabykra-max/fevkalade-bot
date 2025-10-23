@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrol Paneli - Fevkalade Bot</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Discord Embed Meta Tags -->
+    <meta property="og:title" content="Fevkalade Bot - Kontrol Paneli">
+    <meta property="og:description" content="Sunucularınızı yönetin ve bot ayarlarını düzenleyin. Discord sunucunuz için gelişmiş moderasyon ve yönetim araçları.">
+    <meta property="og:image" content="https://fevkalade.netlify.app/images/logo.png">
+    <meta property="og:url" content="https://fevkalade.netlify.app/dashboard.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Fevkalade Bot">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fevkalade Bot - Kontrol Paneli">
+    <meta name="twitter:description" content="Sunucularınızı yönetin ve bot ayarlarını düzenleyin">
+    <meta name="twitter:image" content="https://fevkalade.netlify.app/images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Fevkalade Bot" class="logo-img">
+                <span class="logo-text">Fevkalade</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i>Ana Sayfa</a></li>
+                <li><a href="index.html#features" class="nav-link"><i class="fas fa-star"></i>Özellikler</a></li>
+                <li><a href="index.html#commands" class="nav-link"><i class="fas fa-terminal"></i>Komutlar</a></li>
+                <li><a href="index.html#stats" class="nav-link"><i class="fas fa-chart-bar"></i>İstatistikler</a></li>
+                <li><a href="index.html#contact" class="nav-link"><i class="fas fa-envelope"></i>İletişim</a></li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <a href="dashboard.html" class="btn btn-dashboard active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Kontrol Paneli</span>
+                </a>
+                <a href="https://discord.com/api/oauth2/authorize?client_id=1408189180982591618&permissions=8&scope=bot%20applications.commands" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-discord"></i>
+                    <span>Sunucuna Ekle</span>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="dashboard-page">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1><i class="fas fa-tachometer-alt"></i> Bot Kontrol Paneli</h1>
+                <p>Sunucularınızı yönetin ve bot ayarlarını düzenleyin</p>
+            </div>
+
+            <div class="auth-section">
+                <div class="auth-card">
+                    <div class="auth-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h2>Hoş Geldiniz!</h2>
+                    <p>Sunucularınızı yönetmek ve bot ayarlarını düzenlemek için Discord hesabınızla giriş yapın.</p>
+                    <a href="#" class="btn-discord-login">
+                        <i class="fab fa-discord"></i>
+                        Discord ile Devam Et
+                    </a>
+                    <div class="auth-info">
+                        <p><i class="fas fa-shield-alt"></i> Güvenli OAuth2 ile giriş</p>
+                        <p><i class="fas fa-lock"></i> Verileriniz korunur</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content" style="display: none;">
+                <div class="dashboard-sidebar">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" id="userAvatar">
+                        </div>
+                        <div class="user-details">
+                            <h3 id="userName">Kullanıcı</h3>
+                            <p id="userTag">#0000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="server-selector">
+                        <h3><i class="fas fa-server"></i> Sunucularınız</h3>
+                        <div class="server-list">
+                            <div class="loading-servers">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Sunucular yüklenyor...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="logout-section">
+                        <button class="btn-logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Çıkış Yap
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-main">
+                    <div class="dashboard-tabs">
+                        <button class="tab-btn active" data-tab="overview">
+                            <i class="fas fa-chart-line"></i> Genel Bakış
+                        </button>
+                        <button class="tab-btn" data-tab="moderation">
+                            <i class="fas fa-shield-alt"></i> Moderasyon
+                        </button>
+                        <button class="tab-btn" data-tab="settings">
+                            <i class="fas fa-cog"></i> Ayarlar
+                        </button>
+                        <button class="tab-btn" data-tab="logs">
+                            <i class="fas fa-file-alt"></i> Loglar
+                        </button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <div class="overview-stats">
+                            <div class="stat-card">
+                                <i class="fas fa-server"></i>
+                                <div class="stat-info">
+                                    <h3 id="totalServers">0</h3>
+                                    <p>Toplam Sunucu</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-users"></i>
+                                <div class="stat-info">
+                                    <h3 id="totalUsers">0</h3>
+                                    <p>Toplam Kullanıcı</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-robot"></i>
+                                <div class="stat-info">
+                                    <h3 id="botStatus">Çevrimdışı</h3>
+                                    <p>Bot Durumu</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-clock"></i>
+                                <div class="stat-info">
+                                    <h3 id="uptime">0s</h3>
+                                    <p>Çalışma Süresi</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="recent-activity">
+                            <h3><i class="fas fa-clock"></i> Son Aktiviteler</h3>
+                            <div class="activity-list">
+                                <div class="no-activity">
+                                    <i class="fas fa-info-circle"></i>
+                                    <p>Sunucu seçin ve bot aktif olduğunda aktiviteler burada görünecek</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="moderation">
+                        <div class="moderation-settings">
+                            <div class="setting-group">
+                                <h3><i class="fas fa-shield-alt"></i> Otomatik Moderasyon</h3>
+                                <div class="setting-item">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <div class="setting-info">
+                                        <h4>Spam Koruması</h4>
+                                        <p>Aynı mesajı tekrar eden kullanıcıları otomatik sustur</p>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <div class="setting-info">
+                                        <h4>Link Koruması</h4>
+                                        <p>İzinsiz link paylaşımını engelle</p>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <div class="setting-info">
+                                        <h4>Küfür Filtresi</h4>
+                                        <p>Uygunsuz kelimeleri otomatik sil</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="settings">
+                        <div class="bot-settings">
+                            <div class="setting-group">
+                                <h3><i class="fas fa-cog"></i> Genel Ayarlar</h3>
+                                <div class="setting-item">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <div class="setting-info">
+                                        <h4>Hoş Geldin Mesajı</h4>
+                                        <p>Yeni üyelere hoş geldin mesajı gönder</p>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <div class="setting-info">
+                                        <h4>Ayrılma Mesajı</h4>
+                                        <p>Üye ayrıldığında bildirim gönder</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="logs">
+                        <div class="logs-section">
+                            <h3><i class="fas fa-file-alt"></i> Son Loglar</h3>
+                            <div class="logs-list">
+                                <div class="no-logs">
+                                    <i class="fas fa-info-circle"></i>
+                                    <p>Bot aktif olduğunda loglar burada görünecek</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

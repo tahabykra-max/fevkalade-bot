@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fevkalade Bot - Gelişmiş Discord Moderasyon Botu</title>
+    <meta name="description" content="Discord sunucunuz için gelişmiş moderasyon ve eğlence botu. Otomatik moderasyon, müzik, oyunlar ve daha fazlası.">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Fevkalade Bot" class="logo-img">
+                <span class="logo-text">Fevkalade</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i>Ana Sayfa</a></li>
+                <li><a href="#features" class="nav-link"><i class="fas fa-star"></i>Özellikler</a></li>
+                <li><a href="#commands" class="nav-link"><i class="fas fa-terminal"></i>Komutlar</a></li>
+                <li><a href="#stats" class="nav-link"><i class="fas fa-chart-bar"></i>İstatistikler</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i>İletişim</a></li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <div class="user-profile" id="userProfile" style="display: none;">
+                    <img src="" alt="User" class="user-avatar" id="navUserAvatar">
+                    <span class="user-name" id="navUserName"></span>
+                    <div class="user-dropdown">
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i>Kontrol Paneli</a>
+                        <a href="#" id="navLogout"><i class="fas fa-sign-out-alt"></i>Çıkış Yap</a>
+                    </div>
+                </div>
+                <a href="dashboard.html" class="btn btn-dashboard" id="dashboardBtn">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Kontrol Paneli</span>
+                </a>
+                <a href="https://discord.com/api/oauth2/authorize?client_id=1408189180982591618&permissions=8&scope=bot%20applications.commands" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-discord"></i>
+                    <span>Sunucuna Ekle</span>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-robot"></i>
+                    <span>Yeni Nesil Discord Botu</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Discord Sunucunuzu <span class="gradient-text">Fevkalade</span> Yapın
+                </h1>
+                
+                <p class="hero-description">
+                    Gelişmiş moderasyon araçları, eğlenceli komutlar ve otomatik yönetim özellikleri ile 
+                    Discord sunucunuzu bir üst seviyeye taşıyın. Ücretsiz ve kullanımı kolay.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="https://discord.com/api/oauth2/authorize?client_id=1408189180982591618&permissions=8&scope=bot%20applications.commands" target="_blank" class="btn btn-primary btn-large">
+                        <i class="fab fa-discord"></i>
+                        <span>Hemen Ekle</span>
+                        <div class="btn-shine"></div>
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-large">
+                        <i class="fas fa-play"></i>
+                        <span>Özellikleri Keşfet</span>
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="0">0</div>
+                        <div class="stat-label">Aktif Kullanıcı</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="0">0</div>
+                        <div class="stat-label">Sunucu</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="0">0</div>
+                        <div class="stat-label">% Uptime</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="bot-showcase">
+                    <div class="bot-avatar">
+                        <img src="images/logo.png" alt="Fevkalade Bot" class="bot-img">
+                        <div class="status-indicator online">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-preview">
+                        <div class="chat-message">
+                            <div class="message-avatar">
+                                <img src="images/logo.png" alt="Bot">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <span class="username">Fevkalade Bot</span>
+                                    <span class="bot-tag verified"><i class="fas fa-check"></i> BOT</span>
+                                </div>
+                                <div class="message-text">Sunucunuz artık güvende! 🛡️</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section class="announcements-section" id="announcements-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Duyurular</span>
+                </div>
+                <h2 class="section-title">Son Haberler</h2>
+                <p class="section-description">
+                    Bot ve site ile ilgili güncel duyurular
+                </p>
+            </div>
+            
+            <div class="announcements-container" id="announcementsContainer">
+                <div class="no-announcements">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Henüz duyuru bulunmuyor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Özellikler</span>
+                </div>
+                <h2 class="section-title">Neden Fevkalade Bot?</h2>
+                <p class="section-description">
+                    Modern Discord sunucuları için tasarlanmış güçlü özellikler
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Otomatik Moderasyon</h3>
+                    <p>Otomatik moderasyon araçları ile sunucunuzu güvende tutun.</p>
+                    <div class="feature-list">
+                        <span><i class="fas fa-check"></i>Spam Engel Sistemi</span>
+                        <span><i class="fas fa-check"></i>Küfür Engel Sistemi</span>
+                        <span><i class="fas fa-check"></i>Guard Koruma Sistemi</span>
+                        <span><i class="fas fa-check"></i>Otomatik Rol Verme Sistemi</span>
+                    </div>
+                </div>
+                
+
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Eğlence & Oyunlar</h3>
+                    <p>Eğlenceli komutlar ile sunucunuzu canlandırın.</p>
+                    <div class="feature-list">
+                        <span><i class="fas fa-check"></i>Eklenecek.</span>
+                        <span><i class="fas fa-check"></i>Eklenecek.</span>
+                        <span><i class="fas fa-check"></i>Eklenecek.</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Log Sistemi</h3>
+                    <p>Detaylı sunucu logları ve kullanıcı aktivite raporları.</p>
+                    <div class="feature-list">
+                        <span><i class="fas fa-check"></i>Giriş Çıkış Logları</span>
+                        <span><i class="fas fa-check"></i>Rol Yönetim Logları</span>
+                        <span><i class="fas fa-check"></i>Moderasyon Logları</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Özelleştirme</h3>
+                    <p>Sunucunuza özel ayarlar, özel komutlar ve kişiselleştirme seçenekleri.</p>
+                    <div class="feature-list">
+                        <span><i class="fas fa-check"></i>hmm</span>
+                        <span><i class="fas fa-check"></i>hmm</span>
+                        <span><i class="fas fa-check"></i>hmm</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>7/24 Destek</h3>
+                    <p>Kesintisiz hizmet ve hızlı destek ekibi ile her zaman yanınızdayız.</p>
+                    <div class="feature-list">
+                        <span><i class="fas fa-check"></i>hmm</span>
+                        <span><i class="fas fa-check"></i>Hızlı Yanıt</span>
+                        <span><i class="fas fa-check"></i>Her Dilde Destek</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commands Section -->
+    <section class="commands" id="commands">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-terminal"></i>
+                    <span>Komutlar</span>
+                </div>
+                <h2 class="section-title">Güçlü Komut Sistemi</h2>
+                <p class="section-description">
+                    Kolay kullanım için tasarlanmış kapsamlı komut kütüphanesi
+                </p>
+                <div class="commands-note">
+                    <p><i class="fas fa-info-circle"></i> Dilerseniz prefix komutuyla dilerseniz (/) Slash ile kullanabilirsiniz.</p>
+                </div>
+            </div>
+            
+            <div class="commands-container">
+                <div class="command-categories">
+                    <button class="category-btn active" data-category="moderation">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Moderasyon</span>
+                    </button>
+                    <button class="category-btn" data-category="fun">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Eğlence</span>
+                    </button>
+                    <button class="category-btn" data-category="utility">
+                        <i class="fas fa-tools"></i>
+                        <span>Araçlar</span>
+                    </button>
+                </div>
+                
+                <div class="commands-grid">
+                    <div class="command-group active" data-group="moderation">
+                        <div class="command-item">
+                            <div class="command-syntax">!ban @kullanıcı [sebep]</div>
+                            <div class="command-description">Kullanıcıyı sunucudan yasaklar</div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-syntax">!kick @kullanıcı [sebep]</div>
+                            <div class="command-description">Kullanıcıyı sunucudan atar</div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-syntax">!mute @kullanıcı [süre]</div>
+                            <div class="command-description">Kullanıcıyı belirtilen süre susturur</div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-syntax">!sil [sayı]</div>
+                            <div class="command-description">Belirtilen sayıda mesajı siler</div>
+                        </div>
+                    </div>
+                    
+                    <div class="command-group" data-group="fun">
+                        <div class="command-item">
+                            <div class="command-syntax">!meme</div>
+                            <div class="command-description">Rastgele meme gösterir</div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-syntax">!joke</div>
+                            <div class="command-description">Rastgele şaka yapar</div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-syntax">!8ball [soru]</div>
+                            <div class="command-description">Sihirli 8 top sorunuzu yanıtlar</div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-syntax">!trivia</div>
+                            <div class="command-description">Trivia oyunu başlatır</div>
+                        </div>
+                    </div>
+                    
+                    <div class="command-group" data-group="utility">
+                        <div class="command-item">
+                            <div class="command-syntax">!prefix (yeni prefix)</div>
+                            <div class="command-description">Dinamik prefix sayesinde istediğiniz prefixi ayarlayabilirsiniz</div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-syntax">/botbilgi @kullanıcı</div>
+                            <div class="command-description">Kullanıcı bilgilerini gösterir</div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-syntax">/ping</div>
+                            <div class="command-description">Bot gecikmesini gösterir</div>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-syntax">/help</div>
+                            <div class="command-description">Yardım menüsünü gösterir</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="0">0</div>
+                        <div class="stat-label">Aktif Sunucu</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="0">0</div>
+                        <div class="stat-label">Toplam Kullanıcı</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="0">0</div>
+                        <div class="stat-label">Komut Çalıştırıldı</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="0">0</div>
+                        <div class="stat-label">% Uptime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="invite">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <i class="fab fa-discord"></i>
+                </div>
+                <h2>Hemen Başlayın!</h2>
+                <p>Fevkalade Bot'u sunucunuza ekleyin ve farkı hemen görün</p>
+                <div class="cta-buttons">
+                    <a href="https://discord.com/api/oauth2/authorize?client_id=1408189180982591618&permissions=8&scope=bot%20applications.commands" target="_blank" class="btn btn-primary btn-large">
+                        <i class="fab fa-discord"></i>
+                        <span>Sunucuna Ekle</span>
+                        <div class="btn-shine"></div>
+                    </a>
+                    <a href="dashboard.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="https://discord.gg/EhtGEdaUBC" target="_blank" class="btn btn-secondary btn-large">
+                        <i class="fas fa-headset"></i>
+                        <span>Destek Sunucusu</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Fevkalade Bot">
+                        <span>Fevkalade Bot</span>
+                    </div>
+                    <p>Discord sunucunuz için en gelişmiş moderasyon ve eğlence botu.</p>
+                    <div class="social-links">
+                        <a href="https://discord.gg/EhtGEdaUBC" target="_blank" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Top.gg">
+                            <i class="fas fa-crown"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Discord Bots">
+                            <i class="fas fa-robot"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Bot</h4>
+                        <a href="#features">Özellikler</a>
+                        <a href="#commands">Komutlar</a>
+                        <a href="dashboard.html">Dashboard</a>
+                        <a href="https://discord.com/api/oauth2/authorize?client_id=1408189180982591618&permissions=8&scope=bot%20applications.commands" target="_blank">Sunucuna Ekle</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Destek</h4>
+                        <a href="#">Yardım Merkezi</a>
+                        <a href="https://discord.gg/EhtGEdaUBC" target="_blank">Discord Sunucusu</a>
+                        <a href="status.html">Durum Sayfası</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Yasal</h4>
+                        <a href="privacy.html">Gizlilik Politikası</a>
+                        <a href="terms.html">Kullanım Şartları</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fevkalade Bot. Tüm hakları saklıdır.</p>
+                <p>Made with <i class="fas fa-heart"></i> for Discord communities</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
